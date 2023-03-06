@@ -33,3 +33,7 @@ Route::get('/route2', function() {
 })->name('site.route2');
 
 // Route::redirect('/route2', '/route1');
+
+Route::fallback(function() {
+    echo "This page doesn't existe. Click <a href='/'>here</a> to be redirected to the homepage";
+});
