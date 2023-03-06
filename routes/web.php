@@ -18,3 +18,10 @@ Route::get('/', 'HomeController@home');
 Route::get('/about', 'AboutController@about');
 
 Route::get('/contact', 'ContactController@contact');
+
+Route::get(
+    '/contact/{name}/{category}/{subject}/{message}',
+    function(string $name, string $category, string $subject, string $message) {
+        echo 'We are here: '.$name.' - '.$category.' - '.$subject.' - '.$message;
+    }
+);
