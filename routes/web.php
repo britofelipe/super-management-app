@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@home');
-Route::get('/about', 'AboutController@about');
-Route::get('/contact', 'ContactController@contact');
-Route::get('/login', function() { return "Login"; });
+Route::get('/', 'HomeController@home')->name('site.home');
+Route::get('/about', 'AboutController@about')->name('site.about');
+Route::get('/contact', 'ContactController@contact')->name('site.contact');
+Route::get('/login', function() { return "Login"; })->name('site.login');
 
 Route::prefix('/app')->group(function(){
-    Route::get('/clients', function() { return "Clients"; });
-    Route::get('/supliers', function() { return "Supliers"; });
-    Route::get('/products', function() { return "Products"; });
+    Route::get('/clients', function() { return "Clients"; })->name('app.clients');
+    Route::get('/supliers', function() { return "Supliers"; })->name('app.supliers');
+    Route::get('/products', function() { return "Products"; })->name('app.products');
 });
