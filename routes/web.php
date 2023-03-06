@@ -20,9 +20,12 @@ Route::get('/about', 'AboutController@about');
 Route::get('/contact', 'ContactController@contact');
 
 Route::get(
-    '/contact/{name}/{category}/{subject}/{message?}',
-    function(string $name, string $category, string $subject, string $message = "Message not found") {
+    '/contact/{name}/{category_id}',
+    function(
+        string $name = "Unknown",
+        int $category_id = 1
+    ) {
         // Only optional from right to left
-        echo 'We are here: '.$name.' - '.$category.' - '.$subject.' - '.$message;
+        echo "We are here: $name - $category_id";
     }
-);
+)->where('category_id', '[0-9]+')->where('name', '[A-Za-z]+');
