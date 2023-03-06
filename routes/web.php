@@ -20,8 +20,9 @@ Route::get('/about', 'AboutController@about');
 Route::get('/contact', 'ContactController@contact');
 
 Route::get(
-    '/contact/{name}/{category}/{subject}/{message}',
-    function(string $name, string $category, string $subject, string $message) {
+    '/contact/{name}/{category}/{subject}/{message?}',
+    function(string $name, string $category, string $subject, string $message = "Message not found") {
+        // Only optional from right to left
         echo 'We are here: '.$name.' - '.$category.' - '.$subject.' - '.$message;
     }
 );
