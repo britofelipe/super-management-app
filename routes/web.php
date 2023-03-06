@@ -14,18 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@home');
-
 Route::get('/about', 'AboutController@about');
-
 Route::get('/contact', 'ContactController@contact');
+Route::get('/login', function() { return "Login"; });
 
-Route::get(
-    '/contact/{name}/{category_id}',
-    function(
-        string $name = "Unknown",
-        int $category_id = 1
-    ) {
-        // Only optional from right to left
-        echo "We are here: $name - $category_id";
-    }
-)->where('category_id', '[0-9]+')->where('name', '[A-Za-z]+');
+Route::prefix('/app')->group(function(){
+    Route::get('/clients', function() { return "Clients"; });
+    Route::get('/supliers', function() { return "Supliers"; });
+    Route::get('/products', function() { return "Products"; });
+});
