@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class SupliersController extends Controller
 {
     public function index() {
-        $supliers = ['Suplier 1'];
-        return view('app.suplier.index', compact('supliers'));
+        $suppliers = [
+            0 => ['name' => 'supplier1', 'status' => 'N']
+        ];
+        return view('app.suplier.index', compact('suppliers'));
     }
 }
