@@ -20,7 +20,7 @@ Route::get('/login', function() { return "Login"; })->name('site.login');
 
 Route::prefix('/app')->group(function(){
     Route::get('/clients', function() { return "Clients"; })->name('app.clients');
-    Route::get('/supliers', 'SupliersController@index')->name('app.supliers');
+    Route::get('/suppliers', 'SuppliersController@index')->name('app.suppliers');
     Route::get('/products', function() { return "Products"; })->name('app.products');
 });
 
