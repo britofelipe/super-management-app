@@ -7,18 +7,17 @@
 @endphp
 
 @isset($suppliers)
-    @php $i = 0 @endphp
-    @while(isset($suppliers[$i]))
-        Supplier: {{ $suppliers[$i]['name'] }}
+    @foreach($suppliers as $index => $supplier)
+        {{-- Doesn't affect original array --}}
+        Supplier: {{ $supplier['name'] }}
         <br>
-        Status: {{ $suppliers[$i]['status'] }}
+        Status: {{ $supplier['status'] }}
         <br>
-        CNPJ: {{$suppliers[$i]['cnpj'] ?? ''}}
+        CNPJ: {{$supplier['cnpj'] ?? ''}}
         <br>
-        Telephone: ({{ $suppliers[$i]['ddd'] ?? ''}}) {{ $suppliers[$i]['telephone'] ?? ''}}
+        Telephone: ({{ $supplier['ddd'] ?? ''}}) {{ $supplier['telephone'] ?? ''}}
         <hr>
-        @php $i++ @endphp
-    @endwhile
+    @endforeach
 @endisset
 
 
