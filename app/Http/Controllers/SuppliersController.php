@@ -11,7 +11,7 @@ class SuppliersController extends Controller
             0 => [
                 'name' => 'supplier1',
                 'status' => 'N',
-                'cnpj' => '10.000.000/000-00'
+                'cnpj' => ''
             ],
             1 => [
                 'name' => 'supplier2',
