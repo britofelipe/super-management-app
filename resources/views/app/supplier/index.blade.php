@@ -19,10 +19,20 @@
     <br>
     Status: {{ $suppliers[0]['status'] }}
     <br>
-    @isset($suppliers[0]['cnpj'])
-        CNPJ: {{ $suppliers[0]['cnpj'] }}
-        @empty($suppliers[0]['cnpj'])
-            - Vazio
-        @endempty
-    @endisset
+    CNPJ: {{$suppliers[1]['cnpj'] ?? ''}}
+    <br>
+    Telephone: ({{ $suppliers[1]['ddd'] ?? ''}}) {{ $suppliers[1]['telephone'] ?? ''}} -
+    @switch($suppliers[1]['ddd'])
+        @case('11')
+            São Paulo - SP
+            @break
+        @case('32')
+            Juiz de Fora - MG
+            @break
+        @case('85')
+            Fortaleza - CE
+            @break
+        @default
+            State not found
+    @endswitch
 @endisset

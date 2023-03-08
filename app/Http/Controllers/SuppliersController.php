@@ -11,20 +11,25 @@ class SuppliersController extends Controller
             0 => [
                 'name' => 'supplier1',
                 'status' => 'N',
-                'cnpj' => ''
+                'cnpj' => '0',
+                'ddd' => '11',
+                'telephone' => '0000-0000',
             ],
             1 => [
                 'name' => 'supplier2',
                 'status' => 'Y',
-                // 'cnpj' => '00.000.000/000-00'
-            ]
+                'cnpj' => '0',
+                'ddd' => '85',
+                'telephone' => '0000-0000',
+            ],
+            2 => [
+                'name' => 'supplier3',
+                'status' => 'Y',
+                'cnpj' => '0',
+                'ddd' => '32',
+                'telephone' => '0000-0000',
+            ],
         ];
-
-        /*
-            condition ? if true : if false
-            condition ? if true : (condition ? if true : if false)
-        */
-        echo isset($suppliers[1]['cnpj']) ? 'CNPJ informed' : "CNPJ not informed";
 
         return view('app.supplier.index', compact('suppliers'));
     }
