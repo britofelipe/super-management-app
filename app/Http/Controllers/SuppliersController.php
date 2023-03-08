@@ -19,6 +19,13 @@ class SuppliersController extends Controller
                 // 'cnpj' => '00.000.000/000-00'
             ]
         ];
+
+        /*
+            condition ? if true : if false
+            condition ? if true : (condition ? if true : if false)
+        */
+        echo isset($suppliers[1]['cnpj']) ? 'CNPJ informed' : "CNPJ not informed";
+
         return view('app.supplier.index', compact('suppliers'));
     }
 }
