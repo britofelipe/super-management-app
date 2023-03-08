@@ -7,7 +7,7 @@
 @endphp
 
 @isset($suppliers)
-    @foreach($suppliers as $index => $supplier)
+    @forelse ($suppliers as $index => $supplier)
         {{-- Doesn't affect original array --}}
         Supplier: {{ $supplier['name'] }}
         <br>
@@ -17,7 +17,9 @@
         <br>
         Telephone: ({{ $supplier['ddd'] ?? ''}}) {{ $supplier['telephone'] ?? ''}}
         <hr>
-    @endforeach
+    @empty
+        There aren't any suppliers registered
+    @endforelse
 @endisset
 
 
