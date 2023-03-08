@@ -9,13 +9,13 @@
 @isset($suppliers)
     @forelse ($suppliers as $index => $supplier)
         {{-- Doesn't affect original array --}}
-        Supplier: {{ $supplier['name'] }}
+        Supplier: @{{ $supplier['name'] }}
         <br>
-        Status: {{ $supplier['status'] }}
+        Status: @{{ $supplier['status'] }}
         <br>
-        CNPJ: {{$supplier['cnpj'] ?? ''}}
+        CNPJ: @{{$supplier['cnpj'] ?? ''}}
         <br>
-        Telephone: ({{ $supplier['ddd'] ?? ''}}) {{ $supplier['telephone'] ?? ''}}
+        Telephone: @({{ $supplier['ddd'] ?? ''}}) {{ $supplier['telephone'] ?? ''}}
         <hr>
     @empty
         There aren't any suppliers registered
